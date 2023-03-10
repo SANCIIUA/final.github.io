@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>JacoBot</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="dist/jquery.convform.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section id="side">
+		<h1>
+			Hey! This is a bot of me! <br>
+			Enjoy!
+		</h1>
+		<p>
+			
+		</p>
+	</section>
+	<section id="bot">
+	    <div class="vertical-align">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-6 col-sm-offset-3 col-xs-offset-0">
+	                    <div class="card no-border">
+	                        <div id="chat" class="conv-form-wrapper">
+	                            <form action="" method="GET" class="hidden">
+					<!-- Start -->
+	                                <select data-conv-question="Hey! I'm Jacob. Do you want to talk?" name="first-question">
+	                                    <option value="yes">Yes</option>
+	                                    <option value="of course">Of course!</option>
+	                                </select>
+									<!-- Day All -->
+	                                <input type="text" name="name" data-conv-question="How should I call you then?|Okay! What's your name?">
+	                                <input type="text" data-conv-question="Nice to meet you, {name}:0!. " data-no-answer="true">
+					<!-- forkstart -->
+	                                <select name="day[]" data-conv-question="How has your day been?">
+	                                    <option value="Great!">Great!</option>
+	                                    <option value="Okay">Okay</option>
+	                                    <option value="Bad">Bad</option>
+	                                    <option value="Terrible">Terrible!</option>
+	                                </select>  		
+									<div data-conv-fork="day[]">
+									<!-- Day Great -->	
+	                                    <div data-conv-case="Great!">
+	                                        <input type="text" data-conv-question="Glad to hear that! My day has been great as well!" data-no-answer="true">
+											<input type="text" data-conv-question="Do you want to know something I just learned today?">
+											<option value="Sure!">Sure!</option>
+											<input type="text" name="name" data-conv-question="Apparently Spotify has a feature called Blend! | I learned how to make a Blend on Spotify" data-no-answer="true">
+											<input type="text" name="name" data-conv-question="It lets you combine your music tastes with a friend's to create a custom playlist with both of your favorite songs!" data-no-answer="true"> 
+												<select data-conv-question="Have you tried making one before?" name="blend-question">
+													<option value="I have">I have.</option>
+													<option value="I haven't">I haven't</option>
+												</select>  
+	                                    </div>
+										
+	                                <!-- Day Okay -->
+										<div data-conv-case="Okay">
+						<!-- minorforkstart -->
+		                                    <select name="daybetter" data-conv-question="So your day could be better I imagine?">
+		                                    	<option value="yes">Yes</option>
+		                                    	<option value="no">No</option>
+		                                    </select>
+											<div data-conv-fork="daybetter">
+												<div data-conv-case="yes">
+													<input type="text" data-conv-question="I'm sorry friend." data-no-answer="true">
+													<input type="text" data-conv-question="Can I tell you something I just learned today?">
+												</div>	
+												<div data-conv-case="no">
+													<input type="text" data-conv-question="I'm sorry friend." data-no-answer="true">
+													<input type="text" data-conv-question="Can I tell you something I just learned today?">
+												</div>
+											</div>
+											<input type="text" name="name" data-conv-question="A friend just showed me how to make a blend on spotify. | I learned how to make a blend on Spotify" data-no-answer="true">
+											<input type="text" name="name" data-conv-question="It lets you combine your music taste with a friend." data-no-answer="true">
+										</div>	
+									<!-- Day Bad -->
+										<div data-conv-case="Bad">
+						<!-- minorforkstart -->
+		                                    <select name="cheerup" data-conv-question="I'm sorry, can I tell you something that cheered me up today? ">
+		                                    	<option value="yes">Yes</option>
+		                                    	<option value="no">No</option>
+		                                    </select>
+											<div data-conv-fork="cheerup">
+												<div data-conv-case="yes">
+													<input type="text" data-conv-question="Well, a friend just showed me how to make a blend on spotify. | I learned how to make a Blend on Spotify" data-no-answer="true">
+												</div>	
+												<div data-conv-case="no">
+													<input type="text" data-conv-question="Oh? Nevermind then. I was just going to mention the blend feature on spotify cause" data-no-answer="true">
+												</div>
+											</div>
+	                                    </div>
+									<!-- Day Terrible -->
+										<div data-conv-case="Terrible">
+						<!-- minorforkstart -->
+		                                    <select name="whyterrible" data-conv-question="Shoot, I'm sorry. My day wasn't going that great either but can I tell you what cheered me up?">
+		                                    	<option value="yes">Yes</option>
+		                                    	<option value="no">No</option>
+		                                    </select>
+											<div data-conv-fork="whyterrible">
+												<div data-conv-case="yes">
+													<input type="text" data-conv-question="Well, a friend just showed me how to make a blend on spotify. | I learned how to make a Blend on Spotify" data-no-answer="true">
+												</div>	
+												<div data-conv-case="no">
+													<input type="text" data-conv-question="Oh? Nevermind then. I was just going to mention the blend feature on spotify cause" data-no-answer="true">
+												</div>
+											</div>
+	                                    </div>
+	                                </div>
+									<input type="text" data-conv-question="Well I'm obsessed with the feature honestly haha. ">
+									<input type="text" data-conv-question="Okay, I have another question for you. " data-no-answer="true">
+					<!-- forkstart -->
+									<select name="games" data-conv-question="Do you play video games at all?">
+	                                    <option value="Yes!">Yes!</option>
+	                                    <option value="Nah, never">Nah, never</option>
+	                                </select>
+									<div data-conv-fork="games">
+									<!-- Yes Games	 -->
+										<div data-conv-case="Yes!">
+											<input type="text" data-conv-question="That's great!" data-no-answer="true">
+											<input type="text" data-conv-question="What have you played the most?">
+										</div>
+									<!-- No Games -->
+										<div data-conv-case="Nah, never">
+											<input type="text" data-conv-question="Really?" data-no-answer="true">
+											<input type="text" data-conv-question="That's a shame" data-no-answer="true">
+										</div>
+									</div>  
+	                                
+	                                
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="dist/autosize.min.js"></script>
+	<script type="text/javascript" src="dist/jquery.convform.js"></script>
+
+	<script>
+		jQuery(function($){
+			convForm = $('#chat').convform({selectInputStyle: 'disable'});
+			console.log(convForm);
+		});
+	</script>
+</body>
+</html>
