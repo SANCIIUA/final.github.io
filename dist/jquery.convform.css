@@ -324,9 +324,7 @@ button.submit.glow {
 }
 div.conv-form-wrapper div#messages::-webkit-scrollbar, div#feed ul::-webkit-scrollbar {
     width: 0px;
-    /* remove scrollbar space */
     background: transparent;
-    /* optional: just make scrollbar invisible */
 }
 span.clear {
     display: block;

@@ -110,6 +110,7 @@
 	                                    </div>
 	                                </div>
 									<input type="text" data-conv-question="Well I'm obsessed with the feature honestly haha. ">
+									<!-- Games All -->
 									<input type="text" data-conv-question="Okay, I have another question for you. " data-no-answer="true">
 					<!-- forkstart -->
 									<select name="games" data-conv-question="Do you play video games at all?">
@@ -120,15 +121,79 @@
 									<!-- Yes Games	 -->
 										<div data-conv-case="Yes!">
 											<input type="text" data-conv-question="That's great!" data-no-answer="true">
-											<input type="text" data-conv-question="What have you played the most?">
+											<input type="text" data-conv-question="What games have you played the most do you think?">
+											<input type="text" data-conv-question="Shoot, those sound interesting. I've been grinding Apex Legends lately. My roomate and I have been playing ranked a ton. We're almost at gold." data-no-answer="true">
+											<input type="text" data-conv-question="Ever play ranked games ever?">
+											<input type="text" data-conv-question="I think I need a break from them, that's for sure." data-no-answer="true">
 										</div>
 									<!-- No Games -->
 										<div data-conv-case="Nah, never">
 											<input type="text" data-conv-question="Really?" data-no-answer="true">
 											<input type="text" data-conv-question="That's a shame" data-no-answer="true">
 										</div>
-									</div>  
-	                                
+									</div> 
+									<select name="timesink" data-conv-question="They're a huge time sink honestly. I sometimes wish I had a different hobby haha.">
+										<option value="Yah, I get that">Yah, I get that</option>
+									</select>
+									<!-- Hobbies All -->
+									<select name="hobbies" data-conv-question="Actually, I've been trying to pick up some more hobbies lately. Want to hear about any of them?">
+	                                    <option value="Yah sure">Yah sure</option>
+	                                    <option value="No thanks">No thanks</option>
+	                                </select>
+					<!-- forkstart -->
+									<div data-conv-fork="hobbies">
+									<!-- Yes Hobbies -->
+										<div data-conv-case="Yah sure">
+						<!-- minorforkstart -->
+											<select name="whichhobby" data-conv-question="Well actually there are a few. I've always enjoyed Kayaking, traveling and I've really been considering bow making lately. Which interests you haha?">
+												<option value="Bow making">Bow making</option>
+												<option value="Kayaking">Kayaking</option>
+												<option value="Traveling">Traveling</option>
+											</select>
+											<div data-conv-fork="whichhobby">
+												<div data-conv-case="Bow making">
+													<input type="text" data-conv-question="Well, I've been considering getting into the craft for a bit lately. " data-no-answer="true">
+													<input type="text" data-conv-question="Y'know, just to do something with my hands I guess. Was planning on spending this spring break working on a simple hickory bow. " data-no-answer="true">
+													<input type="text" data-conv-question="Sounds kinda fun right? ">
+													<input type="text" data-conv-question="And I have family that have built bows for a living before so I can hopefully get some tips from them haha" data-no-answer="true">
+												</div>
+												<div data-conv-case="Traveling">
+													<input type="text" data-conv-question="Well, honestly, this is even less of a hobby than bow making haha." data-no-answer="true">
+													<input type="text" data-conv-question="It's more of a potential hobby I'd say. I'm currently planning on going on a trip to England for school, but afterwards, I'm considering spending some time in Italy." data-no-answer="true">
+								<!-- minorminorforkstart -->
+														<select name="timeabroad" data-conv-question="Have you ever spent any time abroad?">
+															<option value="Yes I have">Yes I have</option>
+															<option value="No I haven't">No I haven't</option>
+														</select>
+														<div data-conv-fork="timeabroad">
+															<div data-conv-case="Yes I have">
+																<input type="text" data-conv-question="Oh that's cool!" data-no-answer="true">
+																<input type="text" data-conv-question="I've never been overseas unfortunately. The furthest I've been from the U.S. was probably during a highschool trip to Ecuador. That place was amazing!" >
+															</div>
+															<div data-conv-case="No I haven't">
+																<input type="text" data-conv-question="Well I hope you try to someday. I've never been overseas, but I imagine it can be a life changing experience." data-no-answer="true">
+																<input type="text" data-conv-question="Being so far from home..." data-no-answer="true">
+															</div>
+														</div>
+												</div>
+												<div data-conv-case="Kayaking">
+													<input type="text" data-conv-question="It's probably one of my favorite outdoor activities as of late." data-no-answer="true">
+													<input type="text" data-conv-question="The feeling of drifting through a long calm river on a nice sunny day is not something easily replicated that's for sure." data-no-answer="true">
+													<input type="text" data-conv-question="Actually, I went white water rafting last summer. That shit was intense XD. I flipped about 30 seconds after getting in the water haha. Would you ever try it?">
+													<input type="text" data-conv-question="I'd recommend it to anyone." data-no-answer="true">
+												</div>
+											</div>
+											
+										</div>
+									<!-- No Hobbies -->
+										<div data-conv-case="No thanks">
+											<input type="text" data-conv-question="Oh okay, thats cool." data-no-answer="true">
+										</div>
+									</div>
+									<input type="text" data-conv-question="Hey" data-no-answer="true">
+									<input type="text" data-conv-question="I think I'm getting tired though. Cool if we pick this up later?">
+									<input type="text" data-conv-question="Sure sure, nice meeting you! Have a good one.">
+									
 	                                
 	                            </form>
 	                        </div>
